@@ -1,0 +1,105 @@
+
+<!-- <input type="text" ng2TelInput /> -->
+
+
+<table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Created Date</th>
+        <th></th>
+        <button type="button" style="float:right" (click)="addNewelement()">Add Users</button>
+        <button type="button" style="float:right" routerLink="../dashboard">Dashbaoard</button>
+      </tr>
+    </thead>
+    <br>
+    <tbody>
+      <tr *ngFor="let item of crud;index as i;">
+        <th scope="row">{{i+1}}</th>
+        <td>{{item.firstName}}</td>
+        <td>{{item.lastName}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.phone}}</td>
+        <td><i class="bi bi-pencil" (click)="edit(item)"></i></td>
+        <td><i class="bi bi-trash" (click)="delete(item._id)"></i></td>
+      </tr>
+  
+    </tbody>
+  </table>
+  <div class="container" *ngIf="checkAdd">
+    <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1">First Name</label>
+        <input [(ngModel)]="fname" [ngModelOptions]="{standalone: true}" type="name" class="form-control"
+          aria-describedby="emailHelp" placeholder="First Name">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Last Name</label>
+        <input [(ngModel)]="lname" [ngModelOptions]="{standalone: true}" type="name" class="form-control"
+          placeholder="Last Name">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Email</label>
+        <input [(ngModel)]="email" [ngModelOptions]="{standalone: true}" type="email" class="form-control"
+          placeholder="Email">
+      </div> 
+      <!-- <div class="form-group">
+        <label for="exampleInputPassword1">Phone Number</label>
+        <input [(ngModel)]="phone"  [ngModelOptions]="{standalone: true}" type="phone" class="form-control" type="text" ng2TelInput />
+      </div> -->
+      <div class="form-group">
+        <label for="exampleInputPassword1">Created Date</label>
+        <input [(ngModel)]="phone" [ngModelOptions]="{standalone: true}" type="date" class="form-control"
+          placeholder="Short Disscription">
+      </div>
+      <br>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary" (click)="add()">Submit</button>
+  
+      </div>
+    </form>
+  </div>
+  
+  
+  
+  <div class="container" *ngIf="checkEdit">
+    <form>
+  
+      <div class="form-group">
+        <label for="exampleInputEmail1">First Name</label>
+        <input [(ngModel)]="id.firstName" [ngModelOptions]="{standalone: true}" type="name" class="form-control"
+          aria-describedby="emailHelp" placeholder={{id.firstName}}>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Last Name</label>
+        <input [(ngModel)]="id.lastName" [ngModelOptions]="{standalone: true}" type="name" class="form-control"
+          placeholder={{id.lastName}}>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Email</label>
+        <input [(ngModel)]="id.email" [ngModelOptions]="{standalone: true}" type="email" class="form-control"
+          placeholder={{id.email}}>
+      </div><br>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Phone Number</label>
+        <input [(ngModel)]="id.phone" [ngModelOptions]="{standalone: true}" type="phone" class="form-control"type="text" ng2TelInput
+          placeholder={{id.phone}}>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Short Disscription</label>
+        <input [(ngModel)]="id.short" [ngModelOptions]="{standalone: true}" type="short" class="form-control"
+          placeholder={{id.short}}>
+      </div>
+      <br>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary" (click)="update()">Submit</button>
+  
+      </div>
+    </form>
+  </div>
+
+
+

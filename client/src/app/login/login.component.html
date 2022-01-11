@@ -1,0 +1,51 @@
+<div class="container mt-5" *ngIf="up">
+  <div class="row">
+    <h2 class="text-center">Account Login</h2>
+    <div class="col-6 m-auto">
+      <div class="card m-auto">
+        <div class="card-header">
+          Enter Details
+        </div>
+        <div class="card-body">
+          <!-- <form> -->
+          <div class="form-group col-12">
+            <label>Email</label>
+            <input [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control" required>
+          </div>
+          <div class="form-group col-12">
+            <label>Password</label>
+            <input [(ngModel)]="pass" [ngModelOptions]="{standalone: true}" class="form-control" required>
+          </div>
+          <br>
+          <div class="form-group col-12">
+            <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
+            <button type="submit" class="btn btn-secondary m-2" routerLink="../signup">Sign Up</button>
+          </div>
+          <!-- </form> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="container" *ngIf="down">
+  <div style="background-color: lightblue;">
+    <h2 class="text-center">Welcome to your account</h2>
+    <h1 class="text-center">{{obj2.name}}</h1>
+    <p style="text-align: right;">
+      <!-- <a href="#" class="btn btn-info btn-lg" (click)="logout()">
+        <span class="glyphicon glyphicon-log-out"></span> Log out
+      </a>      -->
+      <button type="submit" class="btn btn-danger m-2" (click)="logout()">Logout</button>
+      <button type="submit" class="btn btn-secondary m-2" routerLink="../product">Restaurant Details</button>
+    </p>
+    <!-- <h1 class="text-center">Email: {{obj2.email}}</h1> -->
+  </div>
+</div>

@@ -1,0 +1,149 @@
+<!-- 
+ <div class="text-center">
+  <button type="button" class="btn btn-primary">Add New Row</button>
+</div><br> -->
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact"></a>
+          <button class="navbar-toggler" type="button" (click)="addNewelement()" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav> -->
+
+
+<!-- 
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Short Disscription</th>
+
+
+      <button type="button" style="float:right ;" (click)="addNewelement()">Contact Us</button> -->
+
+<!-- <div class="text-center"> -->
+<!-- <button>Add New Row</button> -->
+<!-- </div><br> -->
+<!-- <th scope="col">Edit</th> -->
+<!-- <th scope="col">Delete</th> -->
+<!-- </tr>
+  </thead>
+  <br>
+  <tbody>
+    <tr *ngFor="let item of crud">
+      <th scope="row">1</th>
+      <td>{{item.firstName}}</td>
+      <td>{{item.lastName}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.phone}}</td>
+      <td>{{item.short}}</td>
+
+      <td><i class="bi bi-pencil" (click)="edit(item)"></i></td>
+      <td><i class="bi bi-trash" (click)="delete(item._id)"></i></td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+
+<div class="container" *ngIf="checkAdd">
+  <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">First Name</label>
+      <input [(ngModel)]="fname" [ngModelOptions]="{standalone: true}" type="name" class="form-control"
+        aria-describedby="emailHelp" placeholder="First Name">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Last Name</label>
+      <input [(ngModel)]="lname" [ngModelOptions]="{standalone: true}" type="name" class="form-control"
+        placeholder="Last Name">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Email</label>
+      <input [(ngModel)]="email" [ngModelOptions]="{standalone: true}" type="email" class="form-control"
+        placeholder="Email">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Phone Number</label>
+      <input [(ngModel)]="phone" [ngModelOptions]="{standalone: true}" type="phone" class="form-control"
+        placeholder="Phone Number">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Short Disscription</label>
+      <input [(ngModel)]="short" [ngModelOptions]="{standalone: true}" type="phone" class="form-control"
+        placeholder="Short Disscription">
+    </div>
+    <br>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary" (click)="add()">Submit</button>
+
+    </div>
+  </form>
+</div> -->
+
+<!-- 
+
+<div class="container" *ngIf="checkEdit">
+  <form>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">First Name</label>
+      <input [(ngModel)]="id.firstName" [ngModelOptions]="{standalone: true}" type="name" class="form-control"
+        aria-describedby="emailHelp" placeholder={{id.firstName}}>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Last Name</label>
+      <input [(ngModel)]="id.lastName" [ngModelOptions]="{standalone: true}" type="name" class="form-control"
+        placeholder={{id.lastName}}>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Email</label>
+      <input [(ngModel)]="id.email" [ngModelOptions]="{standalone: true}" type="email" class="form-control"
+        placeholder={{id.email}}>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Phone Number</label>
+      <input [(ngModel)]="id.phone" [ngModelOptions]="{standalone: true}" type="phone" class="form-control"
+        placeholder={{id.phone}}>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Short Disscription</label>
+      <input [(ngModel)]="id.short" [ngModelOptions]="{standalone: true}" type="short" class="form-control"
+        placeholder={{id.short}}>
+    </div>
+    <br>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary" (click)="update()">Submit</button>
+
+    </div>
+  </form>
+</div> -->
+
+<router-outlet></router-outlet>

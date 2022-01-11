@@ -1,0 +1,154 @@
+<!-- <div class="mt-4">
+  <h2>Restaurant Record App
+  <button type="button" routerLink="/login" class="btn btn-danger btn-sm mx-3">Log Out</button>
+  <button type="button" class="btn btn-success btn-sm" (click)="addNewelement()">Add Restaurant</button>
+</h2>
+</div> -->
+<nav class="navbar navbar-light bg-primary">
+  <div class="container-fluid">
+    <h2>Restaurant Record App </h2>
+    <div class="d-flex">
+      <button type="button" routerLink="/login" class="btn btn-danger btn-sm mx-3">Log Out</button>
+      <button type="button" class="btn btn-success btn-sm" (click)="addNewelement()">Add Restaurant</button>
+    </div>
+  </div>
+</nav>
+<div class="container mt-5">
+  <h1>Restaurant Record Management</h1>
+  <p>You can Save your Record of Restaurant</p>
+  <a href="https://github.com/">Visit For more Application</a>
+</div>
+
+
+<div class="container-fluid">
+
+<div class="mt-5">
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Restaurant Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Mobile Number</th>
+        <th scope="col">Address</th>
+        <th scope="col">Service</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+
+      </tr>
+    </thead>
+    <br>
+    <tbody>
+      <tr *ngFor="let item of crud;index as i;">
+        <th scope="row">{{i+1}}</th>
+        <td>{{item.restaurantId}}</td>
+        <td>{{item.restaurantName}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.mobileNumber}}</td>
+        <td>{{item.address}}</td>
+        <td>{{item.service}}</td>
+        <td><i class="bi bi-pencil" (click)="edit(item)"></i></td>
+        <td><i class="bi bi-trash" (click)="delete(item._id)"></i></td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+  <!-- ///////Add Data////////// -->
+
+  <div class="container" *ngIf="checkAdd">
+    <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Restaurant Id</label>
+        <input [(ngModel)]="rid" [ngModelOptions]="{standalone: true}" type="name" class="form-control"
+          placeholder="Restaurant Id">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Restaurant Name</label>
+        <input [(ngModel)]="rname" [ngModelOptions]="{standalone: true}" type="name" class="form-control"
+          placeholder="Restaurant Name">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">email</label>
+        <input [(ngModel)]="emaill" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
+          placeholder="Email">
+      </div>
+      <!-- <div class="form-group">
+        <label for="exampleInputPassword1">Phone Number</label>
+        <input [(ngModel)]="id.mnumber" [ngModelOptions]="{standalone: true}" type="phone" class="form-control"
+          type="number" ng2TelInput placeholder={{id.mnumber}}>
+      </div> -->
+      <div class="form-group">
+        <label for="exampleInputPassword1">Phone Number</label>
+        <input [(ngModel)]="mnumber" [ngModelOptions]="{standalone: true}" type="number" class="form-control"
+          placeholder="Address">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Address</label>
+        <input [(ngModel)]="addrss" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
+          placeholder="Address">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Service</label>
+        <input [(ngModel)]="servi" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
+          placeholder="Service">
+      </div>
+      <br>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary" (click)="add()">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- ///////Edit Data////////// -->
+
+  <div class="container" *ngIf="checkEdit">
+    <form>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Restaurant Id</label>
+        <input [(ngModel)]="id.restaurantId" [ngModelOptions]="{standalone: true}" type="name" class="form-control"
+          aria-describedby="emailHelp" placeholder={{id.restaurantId}}>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Restaurant Name</label>
+        <input [(ngModel)]="id.restaurantName" [ngModelOptions]="{standalone: true}" type="name" class="form-control"
+          placeholder={{id.restaurantName}}>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">email</label>
+        <input [(ngModel)]="id.email" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
+          placeholder={{id.email}}>
+      </div><br>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Phone Number</label>
+        <input [(ngModel)]="id.mobileNumber" [ngModelOptions]="{standalone: true}" type="phone" class="form-control"
+          type="number" ng2TelInput placeholder={{id.mobileNumber}}>
+      </div>
+      <!-- <div class="form-group">
+        <label for="exampleInputPassword1">Created Date</label>
+        <input [(ngModel)]="id.mobileNumber" [ngModelOptions]="{standalone: true}" type="date" class="form-control"
+          placeholder={{id.mobileNumber}}>
+      </div> -->
+      <div class="form-group">
+        <label for="exampleInputPassword1">Address</label>
+        <input [(ngModel)]="id.address" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
+          placeholder={{id.address}}>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">service</label>
+        <input [(ngModel)]="id.service" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
+          placeholder={{id.service}}>
+      </div>
+      <br>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary" (click)="update()">Submit</button>
+      </div>
+    </form>
+  </div>
+
+
+
+</div>
+</div>
